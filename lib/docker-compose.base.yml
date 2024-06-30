@@ -4,7 +4,9 @@ services:
 
     sharelatex:
         restart: always
-        image: "${IMAGE}"
+        build: &build-definition
+          context: .
+          dockerfile: ./local-sharelatex.dockerfile
         container_name: sharelatex
         volumes:
             - "${OVERLEAF_DATA_PATH}:${OVERLEAF_IN_CONTAINER_DATA_PATH}"
