@@ -7,3 +7,5 @@ RUN echo  "shell_escape = t" >> /usr/local/texlive/2023/texmf.cnf
 RUN tlmgr install biblatex
 RUN tlmgr install minted
 RUN tlmgr install csquotes
+RUN tlmgr install biber
+ENV PATH="/usr/local/texlive/2023/bin/x86_64-linux/:$PATH"
